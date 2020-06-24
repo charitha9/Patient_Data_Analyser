@@ -1,0 +1,50 @@
+{%extends "home.html" %}
+
+{%block content %}
+<div class="login-form  ">
+	
+    <form action="" method="post">
+
+	<svg width="45" height="45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0
+       26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72
+        72-72s72 32.3 72 72v72z"/></svg>
+      
+        <h2 class="text-center">Login</h2> 
+        {{ form.hidden_tag()}}  
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-user"></span>
+                    </span>                    
+                </div>
+              
+               {{ form.username(class="form-control " ,placeholder="username")}}
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                    </span>                    
+                </div>
+               
+               {{ form.password(class="form-control ",placeholder="password")}}
+            </div>
+        </div>        
+        <div class="form-group">
+        	{{ form.submit(class="btn btn-primary btn-block")}}
+				
+            
+        </div>
+        <div class="bottom-action clearfix">
+            <label class="float-left form-check-label">{{form.remember(class="form-check-input")}} Remember me</label>
+            <a href="#" class="float-right" style="padding: 10px; color: #2380D4">Forgot Password?</a>
+        </div>    
+           
+    </form>
+    <p class="text-center small">Don't have an account! <a href="#" style="padding: 2px;color: #2380D4">Sign up here</a>.</p>   
+</div>
+{% endblock %}

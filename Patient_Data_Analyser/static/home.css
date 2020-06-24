@@ -1,0 +1,44 @@
+ body{
+     font-family: "Times New Roman", Times, serif;
+ }
+ .login-form {
+    width: 340px;
+    margin: 50px auto;
+    display: table;
+    background-color: white;
+    border: 0;
+    border-radius: 1rem;
+    text-align: center;
+}
+.login-form form {        
+    margin-bottom: 15px;
+   
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+    size: 30px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.input-group-addon .fa {
+    font-size: 18px;
+}
+.input-group{
+  width: 300px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.bottom-action {
+    font-size: 14px;
+}
+
+svg{
+    display: block;
+    margin: 0 auto;
+}

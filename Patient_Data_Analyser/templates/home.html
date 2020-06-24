@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+ 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css')}}">
 </head>
 <body>
 
 <nav class="navbar navbar-inverse" >
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Hospital</a>
+      <a class="navbar-brand" href="{{url_for('home')}}">Hospital</a>
     </div>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     {% if current_user.is_authenticated%}
+     <li>
+      <a href="#">Account</a>
+     </li> 
+     <li>
+      <a href="{{url_for('logout')}}">Logout</a>
+     </li> 
+     {% else%}
+     
+      <li><a href="{{url_for('login')}}" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
     </ul>
   </div>
 </nav>
-  
+<main role="main" class="container">
+ 
+     {% with messages= get_flashed_messages(with_categories=true) %}
+      {% if messages%}
+      {% for category,message in messages%}
+
+      <div class="alert alert-{{category}}">
+        {{message}}
+        
+      </div>
+
+      {%endfor%}
+      {% endif %}
+      {% endwith %}
+    
+      {% block content %}{% endblock %}
+        
+      
+   
+</main>
+
+
 
 
 </body>
