@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+ 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css')}}">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{url_for('homepage')}}">Data-Center</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+     {% if current_user.is_authenticated%}
+     <li>
+      <a href="#">Account</a>
+     </li> 
+     <li>
+      <a href="{{url_for('logout')}}">Logout</a>
+     </li> 
+     {% else%}
+      <li>
+      <a href="#about">About</a>
+     </li> 
+      <li>
+      <a href="#contact">Contact</a>
+     </li> 
+      <li><a href="{{url_for('login')}}" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="{{image}}" alt="Hamburger Catering" width="1600px" height="100px">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+   
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="{{image2}}" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Data-Center</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.[1] The best-known type of hospital is the general hospital, which typically has an emergency department to treat urgent health problems ranging from fire and accident victims to a sudden illness.  <span class="w3-tag w3-light-grey">Teaching</span> Hospital.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">A teaching hospital combines assistance to people with teaching to medical students and nurses. A medical facility smaller than a hospital is generally called a clinic. Hospitals have a range of departments (e.g. surgery and urgent care) and specialist units such as cardiology. Some hospitals have outpatient departments and some have chronic treatment units. Common support units include a pharmacy, pathology, and radiology.</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">List of Top Hospitals</h1><br>
+      <h4>Apollo Jubliee Hills</h4>
+      <p class="w3-text-grey">1-100/1/CCH aparna cyber life road, Nallagandla, Serilingampally, Hyderabad, Telangana 500019</p><br>
+    
+      <h4>Kims Madhapur</h4>
+      <p class="w3-text-grey">1-100/1/CCH aparna cyber life road, Nallagandla, Serilingampally, Hyderabad, Telangana 500019</p><br>
+    
+      <h4>Citizen Speaciality Hospital</h4>
+      <p class="w3-text-grey">1-100/1/CCH aparna cyber life road, Nallagandla, Serilingampally, Hyderabad, Telangana 500019</p><br>
+    
+      <h4>Sunshine Hospitals</h4>
+      <p class="w3-text-grey">1-100/1/CCH aparna cyber life road, Nallagandla, Serilingampally, Hyderabad, Telangana 500019</p><br>
+    
+      <h4>Apollo Miyapur</h4>
+      <p class="w3-text-grey">1-100/1/CCH aparna cyber life road, Nallagandla, Serilingampally, Hyderabad, Telangana 500019</p>    
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="{{image3}}" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>We offer full-service data distribution, large or small. We understand your needs and we will make sure your data is secure. Do not hesitate to contact us.</p>
+    <p class="w3-text-blue-grey w3-large"><b>Data Service, 42nd Living St, 43043 New York, NY</b></p>
+    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+    
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">cbit</a></p>
+</footer>
+
+</body>
+</html>
