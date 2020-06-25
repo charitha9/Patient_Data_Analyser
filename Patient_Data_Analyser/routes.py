@@ -17,7 +17,7 @@ def login():
         user=Hospital.query.filter_by(username=form.username.data).first()
         if user.password == form.password.data:
             login_user(user,remember=form.remember.data)
-            return redirect(url_for('home'))
+            return redirect(url_for('table'))
 
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
@@ -28,3 +28,12 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+dict1={"name":"srinath" ,"class":"12"}
+dict2={"name":"bigboss" ,"class":"12"}
+dict3={"name":"srinath" ,"class":"12"}
+_list=[dict1,dict2,dict3]
+
+@app.route("/table")
+def table():
+    return render_template('table.html',list=_list)

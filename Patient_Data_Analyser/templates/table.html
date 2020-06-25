@@ -1,0 +1,25 @@
+{%extends "home.html" %}
+{% block content %}
+
+<center><h3>Search Results</h3></center>
+<div class="col-12 col-sm-8 offset-2">
+<table class="table table-striped table-bordered">
+  <thead class="thead-light">
+    <tr class="bg-dark">
+	{% for x in list[0] %}
+		<th scope="col">{{ x }}</th>
+	{% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+  	{% for x in list %}
+    <tr>
+      {% for y in x %}
+      	<th scope="col">{{ x[y] }}</th>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
